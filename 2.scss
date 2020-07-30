@@ -1,0 +1,40 @@
+/*单行注释*/
+body {
+    $red-color: #6f0;
+
+    .userCard {
+        width: 100px;
+
+        &.active {
+            background: yellow;
+        }
+
+        &-name {
+            color: black;
+
+            &:hover {
+                color: $red-color;
+            }
+
+            font: {
+                size: 28px;
+                weight: bold;
+                family: 'Courier New', Courier, monospace;
+            }
+        }
+
+        &-oneSentence {
+            $red: #f60;
+
+            &::before {
+                content: '「 #{$red}';
+            }
+
+            &::after {
+                content: '」';
+            }
+        }
+
+        &-description {}
+    }
+}
