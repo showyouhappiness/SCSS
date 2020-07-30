@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SCSS导航栏</title>
+  <link rel="stylesheet" href="/4.152077d9.css">
+<script src="/4.152077d9.js"></script></head>
+
+<body>
+  <nav class="siteNav" id="nav">
+    <img width="94" height="68" src="" alt="logo">
+    <ul>
+      <li><a href="#">前端</a></li>
+      <li><a href="#">Java</a></li>
+      <li><a href="#">写代码</a></li>
+      <li><a href="#">关于我们</a></li>
+    </ul>
+    <span id="menu" class="menu">三</span>
+    <span id="closeMenu" class="closeMenu">X</span>
+  </nav>-
+  <script>var menu = document.querySelector('#menu');
+var nav = document.querySelector('#nav');
+var closeMenu = document.querySelector('#closeMenu');
+menu.addEventListener('click', function () {
+  nav.classList.toggle('open');
+});
+closeMenu.addEventListener('click', function () {
+  nav.classList.remove('open');
+});</script>
+</body>
+
+</html>

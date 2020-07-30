@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@function px($npx) {
+    @return $npx/375 * 100vw;
+}
+body {
+    h1 {
+        font-size: px(16);
+        color: red;
+    }
+    .icons {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 4%;
+        border: 1px solid red;
+        > .icon {
+            width: px(61);
+            height: px(61);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            border-radius: 50%;
+            border: 1px solid blue;
+        }
+    }
+}

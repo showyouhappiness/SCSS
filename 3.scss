@@ -1,0 +1,81 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  @mixin buttonWithShadow($color){
+    background: $color;
+    box-shadow: 0px 5px 0px 0px darken($color, 15%);
+  }
+  
+  .buttonWrapper{
+    button{
+      padding: 10px 20px;
+      font-size: 20px;
+      border-radius: 4px;
+      border: none;
+      color: white;
+      margin: 0 40px;
+      cursor: pointer;
+        
+    //   &:first-child{   和下面的意思是一样的
+        &:nth-child(1){
+        $blue: #55ACEE;
+        @include buttonWithShadow($blue);
+        &:hover{
+          animation-duration: 0.5s;
+          animation-name: x;
+        }
+      }
+      
+      &:nth-child(2){
+        $green:#2ECC71;
+        @include buttonWithShadow($green);
+        &:hover{
+          animation-duration: 0.5s;
+          animation-name: y;
+        }
+      }
+    }
+  }
+  $n: 10%;
+  $step: 25%;
+  @keyframes x {
+    @for $i from 0 to 4 { 
+      #{$i * $step}{
+        @if $i % 2 == 0 {
+          transform: translateX(-$n);
+        }@else{
+          transform: translateX($n);
+        }
+      }
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  $n2: 20%;
+  @keyframes y {
+    @for $i from 0 to 4 { 
+      #{$i * $step}{
+        @if $i % 2 == 0 {
+          transform: translateY(-$n2);
+        }@else{
+          transform: translateY($n2);
+        }
+      }
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  

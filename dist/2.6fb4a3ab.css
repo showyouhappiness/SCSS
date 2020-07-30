@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/*单行注释*/
+body .userCard {
+  width: 100px; }
+  body .userCard.active {
+    background: yellow; }
+  body .userCard-name {
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; }
+    body .userCard-name:hover {
+      color: #6f0; }
+  body .userCard-oneSentence::before {
+    content: "「 #f60"; }
+  body .userCard-oneSentence::after {
+    content: '」'; }
+
+
+/*# sourceMappingURL=/2.6fb4a3ab.css.map */

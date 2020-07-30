@@ -1,0 +1,110 @@
+// css reset
+// 定义
+@mixin phone {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin ipad {
+  @media (min-width: 501px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  background: linear-gradient(to right, #2b3e76 0%, #1e2d61 100%);
+  font-size: 14px;
+}
+
+// nav styles
+.siteNav {
+  color: white;
+  display: flex;
+  align-items: center;
+
+  >ul {
+    display: flex;
+
+    >li {
+      flex-shrink: 0;
+
+      a {
+        display: inline-block;
+        padding: 1em;
+      }
+    }
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .closeMenu {
+    display: none;
+  }
+
+  @keyframes down {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  // 使用
+  @include phone {
+    >ul {
+      display: none;
+    }
+
+    &.open>ul {
+      display: block;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      color: black;
+      animation: down 1s;
+    }
+
+    &.open .closeMenu {
+      display: block;
+      color: black;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1;
+    }
+
+    .menu {
+      display: block;
+      margin-left: auto;
+      margin-right: 20px;
+    }
+  }
+}
